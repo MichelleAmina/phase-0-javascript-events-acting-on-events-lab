@@ -9,7 +9,7 @@ function moveDodgerLeft() {
       dodger.style.left = `${left - 1}px`;
     }
   }
-
+/*
   document.addEventListener("keydown", function (e) {
     if (e.key === "ArrowLeft") {
       moveDodgerLeft();
@@ -19,7 +19,7 @@ function moveDodgerLeft() {
     else if (e.key === "ArrowRight") {
         moveDodgerRight(); 
     }
-  });
+  });*/
 
   function moveDodgerRight() {
     const leftNumbers = dodger.style.left.replace("px", "");
@@ -29,7 +29,41 @@ function moveDodgerLeft() {
       dodger.style.left = `${left + 1}px`;
     }
   }
- 
+  // moves dodger up 
+  function moveDodgerUp() {
+    
+    const bottomNumbers = dodger.style.bottom.replace("px", "") 
+    const bottom = parseInt(bottomNumbers, 10);
+  
+    if (bottom < 400 - 20) {
+      dodger.style.bottom = `${bottom + 10}px`;
+    }
+  }
+
+  // moves dodger down 
+  function moveDodgerDown() {
+    
+    const bottomNumbers = dodger.style.bottom.replace("px", "") 
+    const bottom = parseInt(bottomNumbers, 10);
+  
+    if (bottom > 0) {
+      dodger.style.bottom = `${bottom - 10}px`;
+    }
+  }
+
+
+
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowLeft") {
+      moveDodgerLeft();
+    } else if (e.key === "ArrowRight") {
+      moveDodgerRight();
+    } else if (e.key === "ArrowUp") {
+      moveDodgerUp();
+    } else if (e.key === "ArrowDown"){
+      moveDodgerDown (); 
+    }  });
 
 
   
